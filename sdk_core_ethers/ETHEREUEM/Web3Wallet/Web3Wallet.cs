@@ -13,7 +13,7 @@ namespace Web3Unity.Scripts.Library.Web3Wallet
 #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
         private static string url = "https://metamask.app.link/dapp/chainsafe.github.io/game-web3wallet/";
 #else
-        private static string url = "https://chainsafe.github.io/game-web3wallet/";
+        public static string url { get; set; }
 #endif
 
         public static async Task<string> SendTransaction(string _chainId, string _to, string _value, string _data = "",
