@@ -151,10 +151,12 @@
     <Compile Include="ETHEREUEM\Web3PrivateKey\Web3PrivateKey.cs" />
     <Compile Include="ETHEREUEM\Web3Wallet\Web3Wallet.cs" />
     <Compile Include="Model\BuyNFT.cs" />
+    <Compile Include="Model\CollectionsModel.cs" />
     <Compile Include="Model\CreateApprovalModel.cs" />
     <Compile Include="Model\CreateMintModel.cs" />
     <Compile Include="Model\CreateRedeemVoucherModel.cs" />
     <Compile Include="Model\GetNftListModel.cs" />
+    <Compile Include="Model\GetNftModel.cs" />
     <Compile Include="Model\GetRootNft.cs" />
     <Compile Include="Model\GetVoucherModel.cs" />
     <Compile Include="Model\ListNFT.cs" />

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 using Models;
 using Newtonsoft.Json;
@@ -56,6 +57,52 @@ namespace Web3Unity.Scripts.Library.ETHEREUEM.Connect
                 CreateMintModel.Root data = JsonUtility.FromJson<CreateMintModel.Root>(System.Text.Encoding.UTF8.GetString(webRequest.downloadHandler.data));
                 Debug.Log("Data: " + JsonConvert.SerializeObject(data.response, Formatting.Indented));
                 return data.response;
+            }
+        }
+
+        public static async Task<string> GetNftCollectionByAcc(string _account)
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("projectId", PlayerPrefs.GetString("ProjectID"));
+            form.AddField("account", _account);
+            string url = host + "/collection/getByAccount";
+            using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+            {
+                await webRequest.SendWebRequest();
+                string data = webRequest.downloadHandler.text;
+                return data;
+            }
+        }
+
+        public static async Task<string> GetNftCollectionById(string _id)
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("projectId", PlayerPrefs.GetString("ProjectID"));
+            form.AddField("_id", _id);
+            string url = host + "/collection/get";
+            using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+            {
+                await webRequest.SendWebRequest();
+                string data = webRequest.downloadHandler.text;
+                return data;
+            }
+        }
+
+        public static async Task<string> GetNft(string _account, string _chain, string _network, string _nftContract, string _tokenId)
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("projectId", PlayerPrefs.GetString("ProjectID"));
+            form.AddField("account", _account);
+            form.AddField("chain", _chain);
+            form.AddField("network", _network);
+            form.AddField("nftContract", _nftContract);
+            form.AddField("tokenId", _tokenId);
+            string url = host + "/getNftData";
+            using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+            {
+                await webRequest.SendWebRequest();
+                string data = webRequest.downloadHandler.text;
+                return data;
             }
         }
 
