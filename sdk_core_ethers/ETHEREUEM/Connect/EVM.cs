@@ -74,11 +74,11 @@ namespace Web3Unity.Scripts.Library.ETHEREUEM.Connect
             }
         }
 
-        public static async Task<string> GetNftCollectionById(string _id)
+        public static async Task<string> GetNftCollectionBySlug(string _slug)
         {
             WWWForm form = new WWWForm();
             form.AddField("projectId", PlayerPrefs.GetString("ProjectID"));
-            form.AddField("_id", _id);
+            form.AddField("slug", _slug);
             string url = host + "/collection/get";
             using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
             {
