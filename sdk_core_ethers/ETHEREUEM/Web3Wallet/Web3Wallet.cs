@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using GameData;
 using Nethereum.Hex.HexConvertors.Extensions;
 using Nethereum.Signer;
 using Nethereum.Util;
@@ -47,7 +46,6 @@ namespace Web3Unity.Scripts.Library.Web3Wallet
             // check if clipboard response is valid
             if (clipBoard.StartsWith("0x") && clipBoard.Length == 66)
             {
-                Logging.SendGameData(data);
                 return clipBoard;
             }
             else

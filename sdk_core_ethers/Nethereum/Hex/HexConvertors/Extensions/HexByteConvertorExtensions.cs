@@ -41,11 +41,11 @@ namespace Nethereum.Hex.HexConvertors.Extensions
             return value.Substring(value.StartsWith("0x") ? 2 : 0);
         }
 
-        public static bool IsTheSameHex(this string first, string second)
+        /*public static bool IsTheSameHex(this string first, string second)
         {
             return string.Equals(EnsureHexPrefix(first).ToLower(), EnsureHexPrefix(second).ToLower(),
                 StringComparison.Ordinal);
-        }
+        }*/
 
         public static string EnsureHexPrefix(this string value)
         {

@@ -61,7 +61,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
         {
             if (log.Topics != null && log.Topics.Length > 0)
             {
-                var eventtopic = log.Topics[0].ToString();
+                string eventtopic = log.Topics[0].ToString();
                 if (signature.IsTheSameHex(eventtopic))
                     return true;
             }
@@ -316,7 +316,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
                 filterOrTopics3.Cast<object>().ToArray(), fromBlock, toBlock);
         }
 
-        public static bool IsFilterInputForEvent(this EventABI eventABI, string contractAddress, NewFilterInput filterInput)
+        /*public static bool IsFilterInputForEvent(this EventABI eventABI, string contractAddress, NewFilterInput filterInput)
         {
             if (filterInput.Topics != null && filterInput.Topics.Length > 0)
             {
@@ -332,9 +332,9 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
                     return true;
             }
             return false;
-        }
+        }*/
 
-        public static bool IsFilterInputForContractAddress(string contractAdress, NewFilterInput filterInput)
+       /* public static bool IsFilterInputForContractAddress(string contractAdress, NewFilterInput filterInput)
         {
             if (contractAdress == null) return true;
             if (filterInput.Address != null && filterInput.Address.Length > 0)
@@ -344,7 +344,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
 
             }
             return false;
-        }
+        }*/
 
         public static bool IsTopicSignatureForEvent(this EventABI eventABI, object topic)
         {

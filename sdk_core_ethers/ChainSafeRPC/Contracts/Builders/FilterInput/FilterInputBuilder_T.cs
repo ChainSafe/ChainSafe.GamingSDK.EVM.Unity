@@ -4,7 +4,6 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Nethereum.ABI.Model;
 using Nethereum.RPC.Eth.DTOs;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Extensions;
 
 namespace Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInput
 {
@@ -18,6 +17,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInput
     /// <typeparam name="TEventDTo"></typeparam>
     public class FilterInputBuilder<TEventDTo> where TEventDTo : class
     {
+        
         private readonly EventABI _eventAbi;
         private readonly TopicFilterContainer<TEventDTo> _topics;
 

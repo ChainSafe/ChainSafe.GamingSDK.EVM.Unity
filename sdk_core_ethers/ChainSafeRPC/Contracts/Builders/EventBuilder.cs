@@ -4,7 +4,6 @@ using Nethereum.ABI.FunctionEncoding;
 using Nethereum.ABI.Model;
 using Nethereum.RPC.Eth.DTOs;
 using Newtonsoft.Json.Linq;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Extensions;
 
 namespace Web3Unity.Scripts.Library.Ethers.Contracts.Builders
 {

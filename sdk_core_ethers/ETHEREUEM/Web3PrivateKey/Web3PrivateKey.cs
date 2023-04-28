@@ -1,7 +1,12 @@
 using System;
+using System.Diagnostics;
 using System.Numerics;
+using NBitcoin;
+using Nethereum.HdWallet;
 using Nethereum.Hex.HexConvertors.Extensions;
 using Nethereum.Signer;
+using Web3Unity.Scripts.Library.Ethers.HDNode.Wordlists;
+using Wordlist = NBitcoin.Wordlist;
 
 namespace Web3Unity.Scripts.Library.Web3PrivateKey
 {
@@ -39,6 +44,7 @@ namespace Web3Unity.Scripts.Library.Web3PrivateKey
             signature = EthECDSASignature.CreateStringSignature(key.SignAndCalculateV(hashByteArr, chainId));
             return signature;
         }
+        
 
         public static string Address(string _privateKey)
         {
