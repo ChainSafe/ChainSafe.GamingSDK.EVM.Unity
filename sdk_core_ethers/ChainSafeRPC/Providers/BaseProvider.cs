@@ -42,7 +42,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Providers
         private long _emittedBlock;
 
         internal Dispatcher _dispatcher;
-        private object _poller;
+        //private object _poller;
 
         public BaseProvider(Network.Network network)
         {

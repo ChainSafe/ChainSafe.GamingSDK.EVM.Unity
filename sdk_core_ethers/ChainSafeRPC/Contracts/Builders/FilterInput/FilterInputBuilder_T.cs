@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using Nethereum.ABI.Model;
+using Nethereum.Contracts;
 using Nethereum.RPC.Eth.DTOs;
 
 namespace Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInput

@@ -15,7 +15,7 @@ namespace Web3Unity.Scripts.Prefabs.Ethers
 {
     public class ChainSafeRPC : MonoBehaviour
     {
-        private Dictionary<ulong, Chains.Chain> _chains;
+        //private Dictionary<ulong, Chains.Chain> _chains;
         private static BaseProvider _provider;
 
         private static string NFT_ADDRESS = "0xc81fa2eacc1c45688d481b11ce94c24a136e125d";

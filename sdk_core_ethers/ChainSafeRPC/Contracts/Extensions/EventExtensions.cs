@@ -3,14 +3,16 @@ using System.Linq;
 using Nethereum.ABI.FunctionEncoding;
 using Nethereum.ABI.FunctionEncoding.Attributes;
 using Nethereum.ABI.Model;
+using Nethereum.Contracts;
 using Nethereum.Hex.HexConvertors.Extensions;
 using Nethereum.RPC.Eth.DTOs;
 using Nethereum.RPC.Eth.DTOs.Comparers;
 using Nethereum.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Builders;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInput;
+using ABITypedRegistry = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.ABITypedRegistry;
+using EventTopicBuilder = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.EventTopicBuilder;
+using FilterInputBuilder = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInputBuilder;
 
 namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
 {

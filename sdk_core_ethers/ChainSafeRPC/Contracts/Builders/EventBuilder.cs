@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Nethereum.ABI.FunctionEncoding;
 using Nethereum.ABI.Model;
+using Nethereum.Contracts;
 using Nethereum.RPC.Eth.DTOs;
 using Newtonsoft.Json.Linq;
 
@@ -63,12 +64,12 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Builders
             return EventABI.GetLogsForEvent(logs);
         }
 
-        public List<EventLog<T>> DecodeAllEventsForEvent<T>(FilterLog[] logs) where T : new()
+        public List<Nethereum.Contracts.EventLog<T>> DecodeAllEventsForEvent<T>(FilterLog[] logs) where T : new()
         {
             return EventABI.DecodeAllEvents<T>(logs);
         }
 
-        public List<EventLog<T>> DecodeAllEventsForEvent<T>(JArray logs) where T : new()
+        public List<Nethereum.Contracts.EventLog<T>> DecodeAllEventsForEvent<T>(JArray logs) where T : new()
         {
             return EventABI.DecodeAllEvents<T>(logs);
         }
