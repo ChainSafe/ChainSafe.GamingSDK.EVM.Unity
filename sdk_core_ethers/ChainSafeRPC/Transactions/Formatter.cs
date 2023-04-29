@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Nethereum.Hex.HexConvertors.Extensions;
 using Nethereum.Hex.HexTypes;
-using Web3Unity.Scripts.Library.Ethers.RLP;
+using Nethereum.RLP;
 
 namespace Web3Unity.Scripts.Library.Ethers.Transactions
 {

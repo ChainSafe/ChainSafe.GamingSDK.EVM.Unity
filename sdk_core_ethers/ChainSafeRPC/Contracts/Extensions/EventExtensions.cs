@@ -3,14 +3,16 @@ using System.Linq;
 using Nethereum.ABI.FunctionEncoding;
 using Nethereum.ABI.FunctionEncoding.Attributes;
 using Nethereum.ABI.Model;
+using Nethereum.Contracts;
 using Nethereum.Hex.HexConvertors.Extensions;
 using Nethereum.RPC.Eth.DTOs;
 using Nethereum.RPC.Eth.DTOs.Comparers;
 using Nethereum.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Builders;
-using Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInput;
+using ABITypedRegistry = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.ABITypedRegistry;
+using EventTopicBuilder = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.EventTopicBuilder;
+using FilterInputBuilder = Web3Unity.Scripts.Library.Ethers.Contracts.Builders.FilterInputBuilder;
 
 namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
 {
@@ -61,7 +63,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
         {
             if (log.Topics != null && log.Topics.Length > 0)
             {
-                var eventtopic = log.Topics[0].ToString();
+                string eventtopic = log.Topics[0].ToString();
                 if (signature.IsTheSameHex(eventtopic))
                     return true;
             }
@@ -316,7 +318,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
                 filterOrTopics3.Cast<object>().ToArray(), fromBlock, toBlock);
         }
 
-        public static bool IsFilterInputForEvent(this EventABI eventABI, string contractAddress, NewFilterInput filterInput)
+        /*public static bool IsFilterInputForEvent(this EventABI eventABI, string contractAddress, NewFilterInput filterInput)
         {
             if (filterInput.Topics != null && filterInput.Topics.Length > 0)
             {
@@ -332,9 +334,9 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
                     return true;
             }
             return false;
-        }
+        }*/
 
-        public static bool IsFilterInputForContractAddress(string contractAdress, NewFilterInput filterInput)
+       /* public static bool IsFilterInputForContractAddress(string contractAdress, NewFilterInput filterInput)
         {
             if (contractAdress == null) return true;
             if (filterInput.Address != null && filterInput.Address.Length > 0)
@@ -344,7 +346,7 @@ namespace Web3Unity.Scripts.Library.Ethers.Contracts.Extensions
 
             }
             return false;
-        }
+        }*/
 
         public static bool IsTopicSignatureForEvent(this EventABI eventABI, object topic)
         {
