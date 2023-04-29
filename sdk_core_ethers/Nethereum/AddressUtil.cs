@@ -58,7 +58,7 @@ namespace Nethereum.Util
 
         public string AddressValueOrEmpty(string address)
         {
-            return ""; //address.IsAnEmptyAddress() ? AddressEmptyAsHex : address;
+            return address.IsAnEmptyAddress() ? AddressEmptyAsHex : address;
         }
 
         public bool IsEmptyOrEqualsAddress(string address1, string candidate)
